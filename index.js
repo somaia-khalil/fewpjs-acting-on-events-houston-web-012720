@@ -3,8 +3,8 @@ function moveDodgerLeft() {
     let dodger = document.getElementById('dodger')
     let left = dodger.style.left.replace("px", "")
     let clean = parseInt(left, 10)
-    dodger.style.left = `${clean - 1}px`
-
+    if (clean > 0)
+        dodger.style.left = `${clean - 1}px`
 }
 
 
@@ -12,7 +12,8 @@ function moveDodgerRight() {
     let dodger = document.getElementById('dodger')
     let left = dodger.style.left.replace("px", "")
     let clean = parseInt(left, 10)
-    dodger.style.left = `${clean +1}px`
+    if (clean < 360)
+        dodger.style.left = `${clean +1}px`
 }
 
 
